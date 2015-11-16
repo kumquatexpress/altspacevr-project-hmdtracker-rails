@@ -1,0 +1,34 @@
+{
+  "name": "realtime",
+  "scripts": {
+    "start": "npm run start:server:bg && npm run start:client & wait",
+    "start:server:bg": "node realtime-server.js &",
+    "start:client": "watchify site.js -v -t babelify -t lessify -g envify -p livereactload -o public/bundle.js",
+    "compile": "browserify -t babelify -t lessify site.js -o public/bundle.js",
+    "clean": "rm public/bundle.js"
+  },
+  "dependencies": {
+    "envify": "^3.4.0",
+    "express": "^4.13.3",
+    "lessify": "^1.0.1",
+    "lodash": "^3.10.1",
+    "package.json": "0.0.0",
+    "react": "^0.14.0",
+    "react-addons-update": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "redis": "^2.3.0",
+    "request": "^2.65.0",
+    "socket.io": "^1.0.6"
+  },
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-plugin-react-transform": "^1.1.1",
+    "babelify": "^6.4.0",
+    "browserify": "^11.2.0",
+    "livereactload": "^2.0.5",
+    "package.json": "0.0.0",
+    "react-proxy": "^1.1.1",
+    "watchify": "^3.5.0"
+  },
+  "main": "bundle.js"
+}

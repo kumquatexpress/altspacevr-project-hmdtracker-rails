@@ -4,20 +4,26 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-old:
-  hmd: test
-  state: announced
+test:
+  name: testhmd
+  company: altspace
+  image_url: http://fake.url/img.png
+  announced_at: <%= 2.days.ago.to_s(:db) %>
   created_at: <%= 2.days.ago.to_s(:db) %>
   updated_at: <%= 2.days.ago.to_s(:db) %>
 
-new:
-  hmd: test
-  state: devkit
+updated:
+  name: testhmd
+  company: altspace
+  image_url: http://fake.url/img.png
+  announced_at: <%= 2.days.ago.to_s(:db) %>
   created_at: <%= 2.days.ago.to_s(:db) %>
   updated_at: <%= 1.days.ago.to_s(:db) %>
 
-only:
-  hmd: latest
-  state: announced
-  created_at: <%= 2.days.ago.to_s(:db) %>
-  updated_at: <%= 2.days.ago.to_s(:db) %>
+latest:
+  name: testhmd
+  company: altspace
+  image_url: http://fake.url/img.png
+  announced_at: <%= 2.days.ago.to_s(:db) %>
+  created_at: <%= 1.days.ago.to_s(:db) %>
+  updated_at: <%= 0.days.ago.to_s(:db) %>
